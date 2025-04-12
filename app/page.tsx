@@ -1,6 +1,10 @@
 import Image from "next/image";
+import { getAllCareers } from "@/lib/yaml/careers";
+import CareerList from "@/components/ui/CareerList";
 
-export default function Home() {
+export default async function Home() {
+  // すべてのキャリアデータを取得
+  const careers = await getAllCareers();
   return (
     <div className="flex flex-col min-h-screen">
       {/* ヘッダー */}
@@ -31,10 +35,13 @@ export default function Home() {
         <section>
           <h2 className="text-2xl md:text-3xl font-semibold mb-4">キャリア一覧</h2>
           <div className="bg-white p-6 rounded-lg shadow-sm">
-            <p className="text-gray-500 italic">
-              ※ キャリア一覧は今後のタスクで実装予定です
-            </p>
-            {/* キャリアリスト表示領域（タスク6で実装） */}
+            {careers.length > 0 ? (
+              <CareerList careers={careers} />
+            ) : (
+              <p className="text-gray-500 italic">
+                登録されているキャリアがありません
+              </p>
+            )}
           </div>
         </section>
       </main>
