@@ -1,0 +1,21 @@
+title: "バックエンドエンジニア"
+last_update: "2025-04-02"
+sections:
+  - title: "スキル"
+    items:
+      - key: "プログラミング言語"
+        value: ["Java", "Python", "Go", "SQL"]
+        must_have: true
+      - key: "フレームワーク"
+        value: ["Spring Boot", "Django", "Express"]
+      - key: "ツール"
+        value: ["Git", "Docker", "Kubernetes"]
+  - title: "経験"
+    items:
+      - key: "年数"
+        value: 7
+      - key: "プロジェクト規模"
+        value: "大規模"
+contact:
+  email: "backend@example.com"
+  github: "backend-dev"

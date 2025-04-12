@@ -3,7 +3,13 @@ import path from 'path';
 import { loadYamlFile } from '@/utils/yaml';
 import { CareerData } from '@/types/career';
 
-const CAREERS_DIR = path.join(process.cwd(), 'data', 'careers');
+// テスト環境かどうかを判定
+const isTestEnvironment = process.env.NODE_ENV === 'test';
+
+// テスト環境では__tests__/fixtures、それ以外では実際のデータディレクトリを使用
+const CAREERS_DIR = isTestEnvironment
+  ? path.join(process.cwd(), '__tests__', 'fixtures')
+  : path.join(process.cwd(), 'data', 'careers');
 
 /**
  * /data/careers/ディレクトリ内のすべてのYAMLファイル名（拡張子なし）を取得
@@ -18,7 +24,10 @@ export async function getAllCareerIds(): Promise<string[]> {
     // 拡張子を除いたファイル名を返す
     return yamlFiles.map(file => path.basename(file, path.extname(file)));
   } catch (error) {
-    console.error('キャリアIDの取得に失敗しました:', error);
+    // テスト環境ではエラーログを出力しない
+    if (!isTestEnvironment) {
+      console.error('キャリアIDの取得に失敗しました:', error);
+    }
     return [];
   }
 }
@@ -78,7 +87,10 @@ export async function getAllCareersData(): Promise<CareerData[]> {
       try {
         return await getCareerData(id);
       } catch (error) {
-        console.error(`キャリアID '${id}' のデータ読み込みに失敗しました:`, error);
+        // テスト環境ではエラーログを出力しない
+        if (!isTestEnvironment) {
+          console.error(`キャリアID '${id}' のデータ読み込みに失敗しました:`, error);
+        }
         return null;
       }
     });
@@ -88,7 +100,10 @@ export async function getAllCareersData(): Promise<CareerData[]> {
     
     return careers;
   } catch (error) {
-    console.error('すべてのキャリアデータの読み込みに失敗しました:', error);
+    // テスト環境ではエラーログを出力しない
+    if (!isTestEnvironment) {
+      console.error('すべてのキャリアデータの読み込みに失敗しました:', error);
+    }
     return [];
   }
 }

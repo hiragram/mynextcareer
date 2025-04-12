@@ -12,6 +12,18 @@ const INVALID_DATE_FORMAT_PATH = path.join(FIXTURES_DIR, 'invalid-date-format.ya
 jest.mock('fs/promises');
 const mockedFs = fs as jest.Mocked<typeof fs>;
 
+// process.cwdのモック
+const originalCwd = process.cwd;
+beforeAll(() => {
+  // process.cwdをモック化して、テスト環境でのパスを固定
+  process.cwd = jest.fn().mockReturnValue('/mock/root/path');
+});
+
+afterAll(() => {
+  // テスト終了後に元に戻す
+  process.cwd = originalCwd;
+});
+
 describe('YAML Loader Functions', () => {
   // テスト前にモックをリセット
   beforeEach(() => {
