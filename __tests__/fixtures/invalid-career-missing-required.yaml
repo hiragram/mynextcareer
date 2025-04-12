@@ -1,0 +1,7 @@
+# title フィールドが欠けている
+last_update: "2025-04-13"
+sections:
+  - title: "スキル"
+    items:
+      - key: "プログラミング言語"
+        value: ["JavaScript", "TypeScript"]
