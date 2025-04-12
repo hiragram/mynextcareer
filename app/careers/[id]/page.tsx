@@ -1,15 +1,46 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
-import { getCareerById } from '@/lib/yaml/careers';
+import { getCareerById, getAllCareers } from '@/lib/yaml/careers';
 import { CareerData } from '@/types/career';
+import { Metadata } from 'next';
 
-type Props = {
-  params: {
-    id: string;
+/**
+ * 静的ページ生成のためのパラメータを生成する
+ * @returns 静的ページ生成のためのパラメータ
+ */
+export async function generateStaticParams() {
+  const careers = await getAllCareers();
+  
+  return careers.map((career) => ({
+    id: career.id,
+  }));
+}
+
+/**
+ * ページのメタデータを生成する
+ * @param params ページのパラメータ
+ * @returns ページのメタデータ
+ */
+export async function generateMetadata({ params }: any): Promise<Metadata> {
+  const { id } = params;
+  const career = await getCareerById(id);
+  
+  if (!career) {
+    return {
+      title: 'キャリアが見つかりません',
+    };
+  }
+  
+  return {
+    title: career.title,
+    description: `${career.title}のキャリア情報`,
   };
-};
+}
 
-export default async function CareerPage({ params }: Props) {
+/**
+ * キャリアページコンポーネント
+ */
+export default async function CareerPage({ params }: any) {
   const { id } = params;
   
   let career: CareerData | null;
