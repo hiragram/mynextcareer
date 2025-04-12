@@ -1,0 +1,21 @@
+title: "フロントエンドエンジニア"
+last_update: "2025-04-13"
+sections:
+  - title: "スキル"
+    items:
+      - key: "プログラミング言語"
+        value: ["JavaScript", "TypeScript", "HTML", "CSS"]
+        must_have: true
+      - key: "フレームワーク"
+        value: ["React", "Next.js", "Vue.js"]
+      - key: "ツール"
+        value: ["Git", "Webpack", "Jest"]
+  - title: "経験"
+    items:
+      - key: "年数"
+        value: 5
+      - key: "プロジェクト規模"
+        value: "中〜大規模"
+contact:
+  email: "example@example.com"
+  github: "example"

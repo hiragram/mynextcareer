@@ -1,0 +1,21 @@
+title: "モバイルアプリエンジニア"
+last_update: "2025-04-03"
+sections:
+  - title: "スキル"
+    items:
+      - key: "プログラミング言語"
+        value: ["Swift", "Kotlin", "Dart"]
+        must_have: true
+      - key: "フレームワーク"
+        value: ["UIKit", "SwiftUI", "Flutter", "Jetpack Compose"]
+      - key: "ツール"
+        value: ["Git", "Xcode", "Android Studio"]
+  - title: "経験"
+    items:
+      - key: "年数"
+        value: 4
+      - key: "プロジェクト規模"
+        value: "中規模"
+contact:
+  email: "mobile@example.com"
+  github: "mobile-dev"

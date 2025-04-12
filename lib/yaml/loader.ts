@@ -3,10 +3,13 @@ import path from 'path';
 import { loadYamlFile } from '@/utils/yaml';
 import { CareerData } from '@/types/career';
 
-const CAREERS_DIR = path.join(process.cwd(), 'data', 'careers');
-
 // テスト環境かどうかを判定
 const isTestEnvironment = process.env.NODE_ENV === 'test';
+
+// テスト環境では__tests__/fixtures、それ以外では実際のデータディレクトリを使用
+const CAREERS_DIR = isTestEnvironment
+  ? path.join(process.cwd(), '__tests__', 'fixtures')
+  : path.join(process.cwd(), 'data', 'careers');
 
 /**
  * /data/careers/ディレクトリ内のすべてのYAMLファイル名（拡張子なし）を取得
