@@ -1,0 +1,36 @@
+# 基本情報
+title: "iOSアプリエンジニア"
+last_update: "2025-04-13"
+sections:
+  - title: 技術について
+    items:
+      - key: Objective-Cがない
+        value: true
+        must_have: true
+      - key: CI環境
+        value: Xcode Cloud Bitrise GitHub Actions
+        must_have: true
+      - key: 高スペックな開発用iPhoneが貸与される
+        value: true
+      - key: Flutter
+        value: false
+        must_have: true
+  - title: 組織について
+    items:
+      - key: iOSアプリエンジニアの人数
+        value: 3人以上
+        must_have: true
+      - key: CTO VPoEもしくはそれに準ずる人がいる
+        value: true
+        must_have: true
+  - title: 会社/事業について
+    items:
+      - key: BtoCのサービスであること
+        value: true
+      - key: 新規事業に挑戦できること
+        value: true
+      - key: リモートワーク
+        value: フルリモートもしくは週1以下の出社
+# 連絡先（オプション）
+contact:
+  email: "yamada@example.com"
