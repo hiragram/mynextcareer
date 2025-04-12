@@ -1,0 +1,12 @@
+title: "不正なYAML構文"
+last_update: "2025-04-13"
+sections:
+  - title: "スキル"
+    items:
+      - key: "プログラミング言語"
+        value: ["JavaScript", "TypeScript"
+      # 閉じ括弧が欠けている
+  - title: "経験"
+    items:
+      - key: "年数"
+        value: 5
