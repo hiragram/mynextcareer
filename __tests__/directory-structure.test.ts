@@ -1,5 +1,6 @@
 import fs from 'fs/promises';
 import path from 'path';
+import { expect } from '@jest/globals';
 import { loadYamlFile } from '../utils/yaml';
 import { getCareerById } from '../lib/yaml/careers';
 
@@ -25,7 +26,7 @@ describe('ディレクトリ構造のテスト', () => {
         const stat = await fs.stat(dirPath);
         expect(stat.isDirectory()).toBe(true);
       } catch (error) {
-        fail(`ディレクトリが存在しません: ${dir}`);
+        throw new Error(`ディレクトリが存在しません: ${dir}`);
       }
     }
   });
@@ -45,7 +46,7 @@ describe('ディレクトリ構造のテスト', () => {
         const stat = await fs.stat(filePath);
         expect(stat.isFile()).toBe(true);
       } catch (error) {
-        fail(`ファイルが存在しません: ${file}`);
+        throw new Error(`ファイルが存在しません: ${file}`);
       }
     }
   });
