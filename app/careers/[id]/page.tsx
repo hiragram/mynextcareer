@@ -56,15 +56,35 @@ export default async function CareerPage({ params }: any) {
     return notFound();
   }
 
+  // 日付をYYYY年MM月DD日に変換
+  const formatDate = (dateStr: string) => {
+    const [year, month, day] = dateStr.split('-');
+    return `${year}年${month}月${day}日`;
+  };
+
   return (
-    <div className="container mx-auto py-8">
-      <h1 className="text-3xl font-bold mb-6">{career.title}</h1>
-      <p className="text-gray-600 mb-8">最終更新: {career.last_update}</p>
+    <div className="container mx-auto px-4 py-8">
+      <div className="mb-8">
+        <a 
+          href="/" 
+          className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-1" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
+          </svg>
+          戻る
+        </a>
+      </div>
+
+      <div className="space-y-6">
+        <h1 className="text-3xl font-bold">{career.title}</h1>
+        <p className="text-gray-600">最終更新: {formatDate(career.last_update)}</p>
+      </div>
       
       {career.sections.map((section, sectionIndex: number) => (
-        <div key={sectionIndex} className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">{section.title}</h2>
-          <div className="space-y-4">
+        <div key={sectionIndex} className="mb-12">
+          <h2 className="text-2xl font-semibold mb-4 md:mb-6">{section.title}</h2>
+          <div className="space-y-4 md:space-y-6">
             {section.items.map((item, itemIndex: number) => (
               <div key={itemIndex} className="border p-4 rounded-lg">
                 <div className="flex justify-between items-start">
