@@ -4,6 +4,7 @@ import { getCareerById, getAllCareers } from '@/lib/yaml/careers';
 import { CareerData } from '@/types/career';
 import { Metadata } from 'next';
 import Link from 'next/link';
+import CareerSection from '@/components/ui/CareerSection';
 
 /**
  * 静的ページ生成のためのパラメータを生成する
@@ -97,34 +98,7 @@ export default async function CareerPage({ params, searchParams }: PageProps) {
       {/* メインコンテンツ */}
       <main>
         {career.sections.map((section, sectionIndex: number) => (
-          <div key={sectionIndex} className="mb-10">
-            <h2 className="text-2xl font-semibold mb-4 border-l-4 border-blue-500 pl-3">{section.title}</h2>
-            <div className="space-y-4">
-              {section.items.map((item, itemIndex: number) => (
-                <div key={itemIndex} className="border p-4 rounded-lg shadow-sm hover:shadow-md transition-shadow">
-                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start">
-                    <h3 className="text-lg font-medium mb-2 sm:mb-0">
-                      {item.key}
-                      {item.must_have && <span className="text-red-500 ml-2" title="必須項目">*</span>}
-                    </h3>
-                    <div className="sm:text-right">
-                      {typeof item.value === 'boolean' ? (
-                        item.value ? '✅' : '❌'
-                      ) : Array.isArray(item.value) ? (
-                        <ul className="list-disc list-inside">
-                          {item.value.map((val, i) => (
-                            <li key={i}>{val}</li>
-                          ))}
-                        </ul>
-                      ) : (
-                        <span>{item.value}</span>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          <CareerSection key={sectionIndex} section={section} />
         ))}
       </main>
       
