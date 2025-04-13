@@ -3,26 +3,26 @@ last_update: "2025-04-13"
 sections:
   - title: 技術について
     items:
-      - key: "使用言語（Go, Rust, TypeScript）"
+      - key: "Go、Rust、TypeScriptのいずれかを使用している"
         value: true
-      - key: マイクロサービス
+      - key: "マイクロサービスアーキテクチャを採用している"
         value: true
         must_have: true
-      - key: "クラウド（AWS, GCP）"
+      - key: "AWS、GCPのいずれかを使用している"
         value: true
         must_have: true
   - title: 組織について
     items:
-      - key: "バックエンドエンジニアの人数（10人以上）"
+      - key: "バックエンドエンジニアが10人以上いる"
         value: true
-      - key: オンコール当番
+      - key: "オンコール当番がない"
         value: false
         must_have: true
   - title: 会社/事業について
     items:
-      - key: "事業ドメイン（フィンテック, ヘルスケア）"
+      - key: "フィンテックまたはヘルスケア領域の事業である"
         value: true
-      - key: フルリモート
+      - key: "フルリモートで働ける"
         value: true
         must_have: true
 contact:

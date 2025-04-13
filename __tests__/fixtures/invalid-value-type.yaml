@@ -3,15 +3,15 @@ last_update: "2025-04-13"
 sections:
   - title: "スキル"
     items:
-      - key: "JavaScript"
+      - key: "JavaScriptを使用している"
         value: true
-      - key: "TypeScript"
+      - key: "TypeScriptの習熟度が上級である"
         value: "上級" # 文字列型（不正）
-      - key: "フレームワーク"
+      - key: "ReactとNext.jsを使用している"
         value: ["React", "Next.js"] # 配列型（不正）
   - title: "経験"
     items:
-      - key: "経験年数"
+      - key: "経験年数が5年以上である"
         value: 5 # 数値型（不正）
 contact:
   email: "example@example.com"

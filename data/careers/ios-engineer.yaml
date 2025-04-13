@@ -4,32 +4,32 @@ last_update: "2025-04-13"
 sections:
   - title: 技術について
     items:
-      - key: Objective-Cがない
+      - key: "Objective-Cを使用していない"
         value: true
         must_have: true
-      - key: "CI環境（Xcode Cloud, Bitrise, GitHub Actions）"
+      - key: "CI環境（Xcode Cloud, Bitrise, GitHub Actions）が整備されている"
         value: true
         must_have: true
-      - key: 高スペックな開発用iPhoneが貸与される
+      - key: "高スペックな開発用iPhoneが貸与される"
         value: true
-      - key: Flutter
+      - key: "Flutterを使用している"
         value: false
         must_have: true
   - title: 組織について
     items:
-      - key: "iOSアプリエンジニアの人数（3人以上）"
+      - key: "iOSアプリエンジニアが3人以上いる"
         value: true
         must_have: true
-      - key: CTO VPoEもしくはそれに準ずる人がいる
+      - key: "CTO、VPoEもしくはそれに準ずる人がいる"
         value: true
         must_have: true
   - title: 会社/事業について
     items:
-      - key: BtoCのサービスであること
+      - key: "BtoCのサービスである"
         value: true
-      - key: 新規事業に挑戦できること
+      - key: "新規事業に挑戦できる"
         value: true
-      - key: "フルリモートもしくは週1以下の出社"
+      - key: "フルリモートもしくは週1以下の出社が可能"
         value: true
 # 連絡先（オプション）
 contact:

@@ -28,16 +28,16 @@ describe('YAML Utility Functions', () => {
       expect(data.sections[0].items).toHaveLength(3);
       
       // boolean型の値が正しく読み込まれていることを確認
-      expect(data.sections[0].items[0].key).toBe('JavaScript');
+      expect(data.sections[0].items[0].key).toBe('JavaScriptを使用している');
       expect(typeof data.sections[0].items[0].value).toBe('boolean');
       expect(data.sections[0].items[0].value).toBe(true);
       expect(data.sections[0].items[0].must_have).toBe(true);
       
-      expect(data.sections[0].items[1].key).toBe('TypeScript');
+      expect(data.sections[0].items[1].key).toBe('TypeScriptを使用している');
       expect(typeof data.sections[0].items[1].value).toBe('boolean');
       expect(data.sections[0].items[1].value).toBe(true);
       
-      expect(data.sections[1].items[0].key).toBe('経験年数5年以上');
+      expect(data.sections[1].items[0].key).toBe('経験年数が5年以上ある');
       expect(typeof data.sections[1].items[0].value).toBe('boolean');
       expect(data.sections[1].items[0].value).toBe(false);
       

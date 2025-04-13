@@ -41,7 +41,7 @@ describe('サンプルデータのテスト', () => {
     expect(data.sections[0].title).toBe('技術について');
     
     // 必須項目が正しく設定されていることを確認
-    expect(data.sections[0].items[0].key).toBe('Objective-Cがない');
+    expect(data.sections[0].items[0].key).toBe('Objective-Cを使用していない');
     expect(data.sections[0].items[0].value).toBe(true);
     expect(data.sections[0].items[0].must_have).toBe(true);
     
@@ -65,7 +65,7 @@ describe('サンプルデータのテスト', () => {
     expect(data.sections[0].title).toBe('技術について');
     
     // 必須項目が正しく設定されていることを確認
-    expect(data.sections[0].items[0].key).toBe('React');
+    expect(data.sections[0].items[0].key).toBe('Reactを使用している');
     expect(data.sections[0].items[0].value).toBe(true);
     expect(data.sections[0].items[0].must_have).toBe(true);
     
@@ -90,7 +90,7 @@ describe('サンプルデータのテスト', () => {
     expect(data.sections[0].title).toBe('技術について');
     
     // 必須項目が正しく設定されていることを確認
-    expect(data.sections[0].items[1].key).toBe('マイクロサービス');
+    expect(data.sections[0].items[1].key).toBe('マイクロサービスアーキテクチャを採用している');
     expect(data.sections[0].items[1].value).toBe(true);
     expect(data.sections[0].items[1].must_have).toBe(true);
     
