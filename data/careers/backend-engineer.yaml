@@ -1,0 +1,31 @@
+title: "バックエンドエンジニア"
+last_update: "2025-04-13"
+sections:
+  - title: 技術について
+    items:
+      - key: 使用言語
+        value: Go Rust TypeScript
+      - key: マイクロサービス
+        value: true
+        must_have: true
+      - key: クラウド
+        value: AWS GCP
+        must_have: true
+  - title: 組織について
+    items:
+      - key: バックエンドエンジニアの人数
+        value: 10人以上
+      - key: オンコール当番
+        value: false
+        must_have: true
+  - title: 会社/事業について
+    items:
+      - key: 事業ドメイン
+        value: フィンテック ヘルスケア
+      - key: リモートワーク
+        value: フルリモート
+        must_have: true
+contact:
+  email: "suzuki@example.com"
+  twitter: "suzuki_backend"
+  github: "suzuki-dev"

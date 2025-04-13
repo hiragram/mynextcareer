@@ -1,0 +1,31 @@
+title: "フロントエンドエンジニア"
+last_update: "2025-04-13"
+sections:
+  - title: 技術について
+    items:
+      - key: React
+        value: true
+        must_have: true
+      - key: TypeScript
+        value: true
+        must_have: true
+      - key: テスト駆動開発
+        value: true
+      - key: マイクロフロントエンド
+        value: false
+  - title: 組織について
+    items:
+      - key: フロントエンドエンジニアの人数
+        value: 5人以上
+        must_have: true
+      - key: デザイナーとの協業
+        value: true
+        must_have: true
+  - title: 会社/事業について
+    items:
+      - key: リモートワーク
+        value: フルリモートもしくは週2以下の出社
+        must_have: true
+contact:
+  email: "tanaka@example.com"
+  github: "tanaka-frontend"
