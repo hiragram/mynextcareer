@@ -67,7 +67,7 @@ describe('ディレクトリ構造のテスト', () => {
     expect(data.sections[0].items).toHaveLength(4);
     
     // 必須項目が正しく設定されていることを確認
-    expect(data.sections[0].items[0].key).toBe('Objective-Cがない');
+    expect(data.sections[0].items[0].key).toBe('Objective-Cを使用していない');
     expect(data.sections[0].items[0].value).toBe(true);
     expect(data.sections[0].items[0].must_have).toBe(true);
     

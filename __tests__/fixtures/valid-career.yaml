@@ -3,18 +3,18 @@ last_update: "2025-04-13"
 sections:
   - title: "スキル"
     items:
-      - key: "JavaScript"
+      - key: "JavaScriptを使用している"
         value: true
         must_have: true
-      - key: "TypeScript"
+      - key: "TypeScriptを使用している"
         value: true
-      - key: "React"
+      - key: "Reactを使用している"
         value: true
   - title: "経験"
     items:
-      - key: "経験年数5年以上"
+      - key: "経験年数が5年以上ある"
         value: false
-      - key: "大規模プロジェクト経験"
+      - key: "大規模プロジェクトの経験がある"
         value: true
 contact:
   email: "example@example.com"

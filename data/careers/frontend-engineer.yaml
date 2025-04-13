@@ -3,27 +3,27 @@ last_update: "2025-04-13"
 sections:
   - title: 技術について
     items:
-      - key: React
+      - key: Reactを使用している
         value: true
         must_have: true
-      - key: TypeScript
+      - key: TypeScriptを使用している
         value: true
         must_have: true
-      - key: テスト駆動開発
+      - key: テスト駆動開発を実践している
         value: true
-      - key: マイクロフロントエンド
+      - key: マイクロフロントエンドを採用している
         value: false
   - title: 組織について
     items:
-      - key: "フロントエンドエンジニアの人数（5人以上）"
+      - key: "フロントエンドエンジニアが5人以上いる"
         value: true
         must_have: true
-      - key: デザイナーとの協業
+      - key: "デザイナーと協業している"
         value: true
         must_have: true
   - title: 会社/事業について
     items:
-      - key: "フルリモートもしくは週2以下の出社"
+      - key: "フルリモートもしくは週2以下の出社が可能"
         value: true
         must_have: true
 contact:
