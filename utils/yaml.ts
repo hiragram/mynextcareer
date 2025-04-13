@@ -84,6 +84,11 @@ function validateRequiredFields(data: Record<string, any>): void {
       if (item.value === undefined) {
         throw new Error(`sections[${index}].items[${itemIndex}] に value フィールドがありません`);
       }
+      
+      // valueフィールドがboolean型であることを確認
+      if (typeof item.value !== 'boolean') {
+        throw new Error(`sections[${index}].items[${itemIndex}].value はboolean型である必要があります`);
+      }
     });
   });
 }

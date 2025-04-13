@@ -7,6 +7,7 @@ const VALID_YAML_PATH = path.join(FIXTURES_DIR, 'valid-career.yaml');
 const INVALID_YAML_SYNTAX_PATH = path.join(FIXTURES_DIR, 'invalid-yaml-syntax.yaml');
 const INVALID_MISSING_REQUIRED_PATH = path.join(FIXTURES_DIR, 'invalid-career-missing-required.yaml');
 const NON_EXISTENT_PATH = path.join(FIXTURES_DIR, 'non-existent.yaml');
+const INVALID_VALUE_TYPE_PATH = path.join(FIXTURES_DIR, 'invalid-value-type.yaml');
 
 describe('YAML Utility Functions', () => {
   describe('loadYamlFile', () => {
@@ -26,20 +27,29 @@ describe('YAML Utility Functions', () => {
       expect(data.sections[0].title).toBe('スキル');
       expect(data.sections[0].items).toHaveLength(3);
       
-      // 配列型の値が正しく読み込まれていることを確認
-      expect(data.sections[0].items[0].key).toBe('プログラミング言語');
-      expect(Array.isArray(data.sections[0].items[0].value)).toBe(true);
-      expect(data.sections[0].items[0].value).toEqual(['JavaScript', 'TypeScript', 'HTML', 'CSS']);
+      // boolean型の値が正しく読み込まれていることを確認
+      expect(data.sections[0].items[0].key).toBe('JavaScript');
+      expect(typeof data.sections[0].items[0].value).toBe('boolean');
+      expect(data.sections[0].items[0].value).toBe(true);
       expect(data.sections[0].items[0].must_have).toBe(true);
       
-      // 数値型の値が正しく読み込まれていることを確認
-      expect(data.sections[1].items[0].key).toBe('年数');
-      expect(data.sections[1].items[0].value).toBe(5);
+      expect(data.sections[0].items[1].key).toBe('TypeScript');
+      expect(typeof data.sections[0].items[1].value).toBe('boolean');
+      expect(data.sections[0].items[1].value).toBe(true);
+      
+      expect(data.sections[1].items[0].key).toBe('経験年数5年以上');
+      expect(typeof data.sections[1].items[0].value).toBe('boolean');
+      expect(data.sections[1].items[0].value).toBe(false);
       
       // 連絡先情報が正しく読み込まれていることを確認
       expect(data.contact).toBeDefined();
       expect(data.contact?.email).toBe('example@example.com');
       expect(data.contact?.github).toBe('example');
+    });
+    
+    // valueフィールドがboolean型以外の場合のバリデーションをテスト
+    test('valueフィールドがboolean型以外の場合にエラーになる', async () => {
+      await expect(loadYamlFile(INVALID_VALUE_TYPE_PATH)).rejects.toThrow(/value はboolean型である必要があります/);
     });
     
     // 不正なYAML構文のファイルに対するエラーハンドリングをテスト
