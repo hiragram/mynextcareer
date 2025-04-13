@@ -52,10 +52,15 @@ function formatDate(dateString: string): string {
   return `${year}年${month}月${day}日`;
 }
 
+type PageProps = {
+  params: { id: string }
+  searchParams: { [key: string]: string | string[] | undefined }
+}
+
 /**
  * キャリアページコンポーネント
  */
-export default async function CareerPage({ params }: { params: { id: string } } & { searchParams: any }) {
+export default async function CareerPage({ params, searchParams }: PageProps) {
   const { id } = params;
   
   let career: CareerData | null;
