@@ -7,7 +7,7 @@
  */
 export interface CareerItem {
   key: string;
-  value: string | boolean | number | string[];
+  value: boolean;
   must_have?: boolean;
 }
 
