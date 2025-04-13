@@ -6,8 +6,8 @@ describe('CareerSection', () => {
     const section: CareerSectionType = {
       title: 'スキルセット',
       items: [
-        { key: 'プログラミング言語', value: ['JavaScript', 'TypeScript'] },
-        { key: 'フレームワーク', value: ['React', 'Next.js'] }
+        { key: 'JavaScript', value: true },
+        { key: 'TypeScript', value: true }
       ]
     };
     
@@ -18,11 +18,11 @@ describe('CareerSection', () => {
     expect(section.items).toHaveLength(2);
     
     // 各項目の内容を確認
-    expect(section.items[0].key).toBe('プログラミング言語');
-    expect(section.items[0].value).toEqual(['JavaScript', 'TypeScript']);
+    expect(section.items[0].key).toBe('JavaScript');
+    expect(section.items[0].value).toBe(true);
     
-    expect(section.items[1].key).toBe('フレームワーク');
-    expect(section.items[1].value).toEqual(['React', 'Next.js']);
+    expect(section.items[1].key).toBe('TypeScript');
+    expect(section.items[1].value).toBe(true);
   });
   
   // 必須項目を含むセクションのテスト
@@ -30,9 +30,9 @@ describe('CareerSection', () => {
     const section: CareerSectionType = {
       title: '必須条件',
       items: [
-        { key: '経験年数', value: '3年以上', must_have: true },
+        { key: '経験年数3年以上', value: true, must_have: true },
         { key: 'チーム開発経験', value: true, must_have: true },
-        { key: '英語力', value: 'ビジネスレベル' }
+        { key: 'ビジネスレベルの英語力', value: false }
       ]
     };
     

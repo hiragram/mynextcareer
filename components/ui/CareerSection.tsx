@@ -6,26 +6,12 @@ import { CareerSection as CareerSectionType, CareerItem as CareerItemType } from
  * @param value 変換する値
  * @returns 変換された文字列または要素
  */
-export function renderValue(value: string | boolean | number | string[]): string | React.ReactNode {
-  if (typeof value === 'boolean') {
-    return value ? (
-      <span className="text-green-600 font-bold">◯</span>
-    ) : (
-      <span className="text-red-600 font-bold">✗</span>
-    );
-  }
-  
-  if (Array.isArray(value)) {
-    return (
-      <ul className="list-disc list-inside">
-        {value.map((val, i) => (
-          <li key={i}>{val}</li>
-        ))}
-      </ul>
-    );
-  }
-  
-  return <span>{value}</span>;
+export function renderValue(value: boolean): React.ReactNode {
+  return value ? (
+    <span className="text-green-600 font-bold">◯</span>
+  ) : (
+    <span className="text-red-600 font-bold">✗</span>
+  );
 }
 
 /**

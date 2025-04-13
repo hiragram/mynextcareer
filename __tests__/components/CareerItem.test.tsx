@@ -2,52 +2,11 @@ import { CareerItem as CareerItemType } from '@/types/career';
 import { renderValue } from '@/components/ui/CareerSection';
 
 // テスト用にrenderValueの戻り値を文字列に変換する関数
-function renderValueAsString(value: string | boolean | number | string[]): string {
-  if (typeof value === 'boolean') {
-    return value ? '◯' : '✗';
-  }
-  
-  if (Array.isArray(value)) {
-    return value.join(', ');
-  }
-  
-  return String(value);
+function renderValueAsString(value: boolean): string {
+  return value ? '◯' : '✗';
 }
 
 describe('renderValue関数', () => {
-  // 文字列値のテスト
-  it('文字列値を正しく処理する', () => {
-    const item: CareerItemType = {
-      key: '役職',
-      value: 'シニアエンジニア'
-    };
-    
-    const result = renderValueAsString(item.value);
-    expect(result).toBe('シニアエンジニア');
-  });
-  
-  // 数値値のテスト
-  it('数値を正しく処理する', () => {
-    const item: CareerItemType = {
-      key: '経験年数',
-      value: 5
-    };
-    
-    const result = renderValueAsString(item.value);
-    expect(result).toBe('5');
-  });
-  
-  // 配列値のテスト
-  it('配列値を正しく処理する', () => {
-    const item: CareerItemType = {
-      key: '使用言語',
-      value: ['JavaScript', 'TypeScript', 'Python']
-    };
-    
-    const result = renderValueAsString(item.value);
-    expect(result).toBe('JavaScript, TypeScript, Python');
-  });
-  
   // 真偽値（true）のテスト
   it('真偽値（true）を◯に変換する', () => {
     const item: CareerItemType = {
