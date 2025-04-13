@@ -75,7 +75,7 @@ sections:
   - title: "スキル"
     items:
       - key: "プログラミング言語"
-        value: ["JavaScript", "TypeScript", "HTML", "CSS"]
+        value: true
         must_have: true
 `;
 
@@ -147,7 +147,7 @@ sections:
   - title: "スキル"
     items:
       - key: "プログラミング言語"
-        value: ["JavaScript", "TypeScript", "HTML", "CSS"]
+        value: true
 ` as any;
         }
         return '';
@@ -169,21 +169,21 @@ sections:
         id: 'id1',
         title: 'キャリア1',
         last_update: '2025-04-01',
-        sections: [{ title: 'セクション1', items: [{ key: 'キー1', value: '値1' }] }]
+        sections: [{ title: 'セクション1', items: [{ key: 'キー1', value: true }] }]
       };
       
       const mockCareerData2: CareerData = {
         id: 'id2',
         title: 'キャリア2',
         last_update: '2025-04-02',
-        sections: [{ title: 'セクション2', items: [{ key: 'キー2', value: '値2' }] }]
+        sections: [{ title: 'セクション2', items: [{ key: 'キー2', value: false }] }]
       };
       
       const mockCareerData3: CareerData = {
         id: 'id3',
         title: 'キャリア3',
         last_update: '2025-04-03',
-        sections: [{ title: 'セクション3', items: [{ key: 'キー3', value: '値3' }] }]
+        sections: [{ title: 'セクション3', items: [{ key: 'キー3', value: true }] }]
       };
       
       // fs.readdirのモック
@@ -202,7 +202,7 @@ sections:
   - title: "セクション1"
     items:
       - key: "キー1"
-        value: "値1"
+        value: true
 ` as any;
         } else if (String(path).includes('id2')) {
           return `
@@ -212,7 +212,7 @@ sections:
   - title: "セクション2"
     items:
       - key: "キー2"
-        value: "値2"
+        value: false
 ` as any;
         } else {
           return `
@@ -222,7 +222,7 @@ sections:
   - title: "セクション3"
     items:
       - key: "キー3"
-        value: "値3"
+        value: true
 ` as any;
         }
       });
@@ -260,7 +260,7 @@ sections:
   - title: "セクション1"
     items:
       - key: "キー1"
-        value: "値1"
+        value: true
 ` as any;
         } else {
           return `
@@ -270,7 +270,7 @@ sections:
   - title: "セクション3"
     items:
       - key: "キー3"
-        value: "値3"
+        value: true
 ` as any;
         }
       });

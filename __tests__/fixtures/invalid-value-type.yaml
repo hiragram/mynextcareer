@@ -1,0 +1,18 @@
+title: "不正な値の型を持つキャリアデータ"
+last_update: "2025-04-13"
+sections:
+  - title: "スキル"
+    items:
+      - key: "JavaScript"
+        value: true
+      - key: "TypeScript"
+        value: "上級" # 文字列型（不正）
+      - key: "フレームワーク"
+        value: ["React", "Next.js"] # 配列型（不正）
+  - title: "経験"
+    items:
+      - key: "経験年数"
+        value: 5 # 数値型（不正）
+contact:
+  email: "example@example.com"
+  github: "example"

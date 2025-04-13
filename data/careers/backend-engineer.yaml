@@ -3,27 +3,27 @@ last_update: "2025-04-13"
 sections:
   - title: 技術について
     items:
-      - key: 使用言語
-        value: Go Rust TypeScript
+      - key: "使用言語（Go, Rust, TypeScript）"
+        value: true
       - key: マイクロサービス
         value: true
         must_have: true
-      - key: クラウド
-        value: AWS GCP
+      - key: "クラウド（AWS, GCP）"
+        value: true
         must_have: true
   - title: 組織について
     items:
-      - key: バックエンドエンジニアの人数
-        value: 10人以上
+      - key: "バックエンドエンジニアの人数（10人以上）"
+        value: true
       - key: オンコール当番
         value: false
         must_have: true
   - title: 会社/事業について
     items:
-      - key: 事業ドメイン
-        value: フィンテック ヘルスケア
-      - key: リモートワーク
-        value: フルリモート
+      - key: "事業ドメイン（フィンテック, ヘルスケア）"
+        value: true
+      - key: フルリモート
+        value: true
         must_have: true
 contact:
   email: "suzuki@example.com"

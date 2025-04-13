@@ -3,19 +3,19 @@ last_update: "2025-04-13"
 sections:
   - title: "スキル"
     items:
-      - key: "プログラミング言語"
-        value: ["JavaScript", "TypeScript", "HTML", "CSS"]
+      - key: "JavaScript"
+        value: true
         must_have: true
-      - key: "フレームワーク"
-        value: ["React", "Next.js", "Vue.js"]
-      - key: "ツール"
-        value: ["Git", "Webpack", "Jest"]
+      - key: "TypeScript"
+        value: true
+      - key: "React"
+        value: true
   - title: "経験"
     items:
-      - key: "年数"
-        value: 5
-      - key: "プロジェクト規模"
-        value: "中〜大規模"
+      - key: "経験年数5年以上"
+        value: false
+      - key: "大規模プロジェクト経験"
+        value: true
 contact:
   email: "example@example.com"
   github: "example"

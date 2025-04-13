@@ -15,16 +15,16 @@ sections:
         value: false
   - title: 組織について
     items:
-      - key: フロントエンドエンジニアの人数
-        value: 5人以上
+      - key: "フロントエンドエンジニアの人数（5人以上）"
+        value: true
         must_have: true
       - key: デザイナーとの協業
         value: true
         must_have: true
   - title: 会社/事業について
     items:
-      - key: リモートワーク
-        value: フルリモートもしくは週2以下の出社
+      - key: "フルリモートもしくは週2以下の出社"
+        value: true
         must_have: true
 contact:
   email: "tanaka@example.com"
