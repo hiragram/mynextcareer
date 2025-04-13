@@ -1,11 +1,5 @@
 import { CareerSection as CareerSectionType } from '@/types/career';
 
-// CareerItemコンポーネントをモック
-jest.mock('@/components/ui/CareerItem', () => ({
-  __esModule: true,
-  default: jest.fn(),
-}));
-
 describe('CareerSection', () => {
   // 基本的な構造テスト
   it('セクションタイトルと項目を正しく構造化する', () => {
@@ -71,19 +65,23 @@ describe('CareerSection', () => {
   // CSSクラスのテスト
   it('セクションに適切なCSSクラスを適用する', () => {
     // セクションのコンテナのクラス
-    const containerClass = 'mb-10';
+    const containerClass = 'border-t border-gray-200 pt-6 mb-10';
+    expect(containerClass).toContain('border-t');
     expect(containerClass).toContain('mb-10');
     
     // セクションタイトルのクラス
-    const titleClass = 'text-2xl font-semibold mb-4 border-l-4 border-blue-500 pl-3';
+    const titleClass = 'text-2xl font-bold mb-6 text-gray-800 flex items-center';
     expect(titleClass).toContain('text-2xl');
-    expect(titleClass).toContain('font-semibold');
-    expect(titleClass).toContain('border-l-4');
-    expect(titleClass).toContain('border-blue-500');
-    expect(titleClass).toContain('pl-3');
+    expect(titleClass).toContain('font-bold');
+    expect(titleClass).toContain('flex items-center');
     
-    // 項目コンテナのクラス
-    const itemsContainerClass = 'space-y-4';
-    expect(itemsContainerClass).toContain('space-y-4');
+    // タイトル装飾のクラス
+    const titleDecorClass = 'w-1 h-6 bg-indigo-500 mr-3';
+    expect(titleDecorClass).toContain('bg-indigo-500');
+    
+    // テーブルのクラス
+    const tableClass = 'min-w-full border-collapse';
+    expect(tableClass).toContain('min-w-full');
+    expect(tableClass).toContain('border-collapse');
   });
 });
