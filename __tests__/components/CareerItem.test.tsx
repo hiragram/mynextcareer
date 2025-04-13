@@ -1,5 +1,5 @@
 import { CareerItem as CareerItemType } from '@/types/career';
-import { renderValue } from '@/components/ui/CareerSection';
+import { renderValue } from '@/components/ui/CareerItem';
 
 // テスト用にrenderValueの戻り値を文字列に変換する関数
 function renderValueAsString(value: boolean): string {
