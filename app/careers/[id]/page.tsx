@@ -55,7 +55,7 @@ function formatDate(dateString: string): string {
 /**
  * キャリアページコンポーネント
  */
-export default async function CareerPage({ params }: { params: { id: string } }) {
+export default async function CareerPage({ params }: { params: { id: string } } & { searchParams: any }) {
   const { id } = params;
   
   let career: CareerData | null;
